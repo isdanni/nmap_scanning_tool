@@ -1,6 +1,6 @@
 import pandas as pd
 import subprocess
-iplist = pd.read_csv('C:/../test.csv',header=[0]) # For picking up the IP range from CSV file automatically
+iplist = pd.read_csv('C:/../test.csv',header=[0]) # IPs to be scanned
 iplist.dropna(subset=['IPSegment'],inplace=True) #drop the dataframe without IP range
 for iprange in iplist['IPSegment']:
     try:
@@ -13,4 +13,4 @@ for iprange in iplist['IPSegment']:
     except:
         location = iplist[iplist['IPSegment']==iprange]['Location'].values[0]
         print('Fail to scan the network of' + location)
-print ('INFO :NMAP scanning completed')
+print ('NMAP scanning completed')
