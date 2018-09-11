@@ -1,6 +1,6 @@
 import pandas as pd
 import subprocess
-iplist = pd.read_csv('C:/SEPDiscovery/OOCLIP(parsed).csv',header=[0]) # For picking up the IP range from CSV file automatically
+iplist = pd.read_csv('C:/../test.csv',header=[0]) # For picking up the IP range from CSV file automatically
 iplist.dropna(subset=['IPSegment'],inplace=True) #drop the dataframe without IP range
 for iprange in iplist['IPSegment']:
     try:
